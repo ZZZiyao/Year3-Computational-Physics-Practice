@@ -17,8 +17,9 @@ import matplotlib.pyplot as plt
 def gaussian(x, mu, sig):
     return (1.0 / (np.sqrt(2.0 * np.pi) * sig) * np.exp(-np.power((x - mu) / sig, 2.0) / 2))
 
-xi=np.linspace(0,10,10)
-fi=gaussian(xi,5,5)
+xi=np.linspace(0,10,6)
+fi=np.cos(xi)
+#fi=gaussian(xi,5,5)
 
 def lagrange(x,xi,fi,num):
     adding_element=[]
@@ -31,13 +32,15 @@ def lagrange(x,xi,fi,num):
       adding_element.append(basis*fi[i])
     return np.sum(adding_element)
 
-x=np.linspace(0,15,30)
+x=np.linspace(0,12,100)
 num=len(xi)
 lagrange_fit_func = [lagrange(x_val, xi, fi, num) for x_val in x] 
 
 plt.plot(x,lagrange_fit_func,label='lagrange fitted function')
 plt.plot(xi,fi,label='initial points')
-plt.plot(x,gaussian(x,5,5),label='correct function')
+#plt.plot(x,gaussian(x,5,5),label='correct function')
+plt.plot(x,np.cos(x),label='correct function')
+
 plt.legend()
 plt.title('Lagrange Polynomials')
 plt.grid()
