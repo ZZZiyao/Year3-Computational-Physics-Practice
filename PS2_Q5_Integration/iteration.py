@@ -24,7 +24,7 @@ for j in range(1,20):
     print(f"Iteration {j}: Tj1 = {Tj1}, h = {h}")
     
     Sj=4/3*Tj1-1/3*Tj
-    print(f"Iteration {j}: Sj = {Sj}")
+
     if abs((Tj1-Tj)/Tj)<0.0001:
         Integration=Tj1
         break

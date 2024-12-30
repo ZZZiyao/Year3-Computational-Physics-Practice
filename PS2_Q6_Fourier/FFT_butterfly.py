@@ -64,7 +64,7 @@ fn_array = func_to_fft(t_array)
 
 fft_result = iterative_fft(fn_array.astype(complex))
 
-# 手动平移 FFT 结果
+
 fft_shifted = np.zeros_like(fft_result, dtype=complex)
 fft_shifted[:N // 2] = fft_result[N // 2:]  # move high frequencies to the front
 fft_shifted[N // 2:] = fft_result[:N // 2]  # move low frequencies to behind
