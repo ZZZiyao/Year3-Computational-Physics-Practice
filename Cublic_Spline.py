@@ -14,9 +14,9 @@ def generate_M(x):
     M[0][0]=1
     M[N-1][N-1]=1
     for i in range(1,N-1):
-        M[i][i]=(x[i+1]+x[i-1])/3
-        M[i][i-1]=(x[i]+x[i-1])/6
-        M[i][i+1]=(x[i+1]+x[i])/6
+        M[i][i]=(x[i+1]-x[i-1])/3
+        M[i][i-1]=(x[i]-x[i-1])/6
+        M[i][i+1]=(x[i+1]-x[i])/6
     return M
 
 def generate_b(x,f):
@@ -32,7 +32,7 @@ f=np.sin(x)
 
 b=generate_b(x,f)
 M=generate_M(x)
-f_dash=np.dot(np.linalg.inv(M),b)
+f_dash=np.linalg.solve(M,b)
 
 fx=[]
 x_to_inter=[]
