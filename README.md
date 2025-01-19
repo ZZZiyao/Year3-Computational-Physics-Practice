@@ -1,3 +1,3 @@
-Coding questions on problem sheets.
+Exercises on problem sheets.
 
 This repository is intended for academic and personal use ONLY.
